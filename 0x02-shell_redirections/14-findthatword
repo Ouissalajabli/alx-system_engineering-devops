@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -n '/root/p' /etc/passwod
+grep "^root" /etc/passwod
