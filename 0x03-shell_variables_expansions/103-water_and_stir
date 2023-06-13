@@ -1,2 +1,6 @@
 #!/bin/bash
-echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo SSTIR | tr 'stir.' '01234'))))) | '01234567' 'bestchol')
+water="$WATER"
+stir="$STIR"
+result_dec=$((5#$(echo "$water" | tr 'water' '01234') + 5#$(echo "$stir" | tr 'stir.' '01234')))
+result_bestchol=$(printf "%s" "$result_dec" | bc)
+echo "$result_bestchol"
